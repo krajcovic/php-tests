@@ -10,8 +10,19 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <h1>Developer - tester page's.</h1>
+        <p>You haven't any purpose by in here.</p>
         <?php
-        // put your code here
+            $folder = dir(".");
+            echo "<table>";
+            while($file = $folder->read()) {
+                if($file == "." || $file =="..") {
+                    continue;
+                }
+                
+                echo '<tr><a href="'.basename($file).'">'.basename($file).'</a></tr><br>';
+            }
+            echo "</table";
         ?>
     </body>
 </html>
